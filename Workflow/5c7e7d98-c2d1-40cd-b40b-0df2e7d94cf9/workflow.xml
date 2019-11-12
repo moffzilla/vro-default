@@ -3,7 +3,9 @@
     <display-name>First Workflow</display-name>
     <position y="45.8984375" x="103.0"/>
     <input/>
-    <output/>
+    <output>
+        <param name="result" type="string"/>
+    </output>
     <attrib name="url" type="string">
         <value encoded="n">http://10.149.95.226:8080</value>
     </attrib>
@@ -21,12 +23,12 @@ result = urlObject.getContent() ;</script>
             </bind>
         </in-binding>
         <out-binding>
-            <bind name="result" type="string">
+            <bind name="result" type="string" export-name="result">
                 <description>Operation result</description>
             </bind>
         </out-binding>
         <description>Get content from HTTP.</description>
-        <position y="54.3984375" x="171.0"/>
+        <position y="49.3984375" x="168.0"/>
     </workflow-item>
     <presentation/>
 </ns2:workflow>
