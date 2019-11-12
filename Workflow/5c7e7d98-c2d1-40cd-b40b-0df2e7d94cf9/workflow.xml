@@ -17,7 +17,6 @@
         <script encoded="false">//Auto-generated script
 var urlObject = new URL(url);
 result = urlObject.getContent() ;
-System.Log("Testing URL Connectivity");
         </script>
         <in-binding>
             <bind name="url" type="string" export-name="url">
