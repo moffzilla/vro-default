@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:workflow xmlns:ns2="http://vmware.com/vco/workflow" root-name="item1" object-name="workflow:name=generic" id="5c7e7d98-c2d1-40cd-b40b-0df2e7d94cf9" editor-version="2.0" version="0.0.0" api-version="6.0.0" restartMode="1" resumeFromFailedMode="0">
+    <display-name>First Workflow</display-name>
+    <position y="45.8984375" x="103.0"/>
+    <input/>
+    <output/>
+    <attrib name="url" type="string">
+        <value encoded="n">https://hooks.slack.com/services/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 </value>
+    </attrib>
+    <attrib name="content" type="string">
+        <value encoded="n">{"text":"Red or Blue pill perhaps?"}</value>
+    </attrib>
+    <workflow-item name="item0" type="end" end-mode="0" comparator="0">
+        <position y="51.87541513584446" x="302.64243775651124"/>
+    </workflow-item>
+    <workflow-item name="item1" out-name="item0" type="task" prototype-id="http-post" content-mode="r" interaction="io" comparator="0">
+        <display-name>HTTP post</display-name>
+        <script encoded="false">//Auto-generated script
+var urlObject = new URL(url);
+result = urlObject.postContent(content);</script>
+        <in-binding>
+            <bind name="url" type="string" export-name="url">
+                <description>Target url</description>
+            </bind>
+            <bind name="content" type="string" export-name="content">
+                <description>Data to post</description>
+            </bind>
+        </in-binding>
+        <out-binding>
+            <bind name="result" type="string">
+                <description>Operation result</description>
+            </bind>
+        </out-binding>
+        <description>Post content via HTTP.</description>
+        <position y="55.33614506792223" x="160.32121887825562"/>
+    </workflow-item>
+    <presentation/>
+</ns2:workflow>
