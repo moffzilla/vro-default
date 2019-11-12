@@ -16,7 +16,9 @@
         <display-name>HTTP get</display-name>
         <script encoded="false">//Auto-generated script
 var urlObject = new URL(url);
-result = urlObject.getContent() ;</script>
+result = urlObject.getContent() ;
+System.Log("Testing URL Connectivity");
+        </script>
         <in-binding>
             <bind name="url" type="string" export-name="url">
                 <description>Target url</description>
