@@ -5,7 +5,7 @@
     <input/>
     <output/>
     <attrib name="url" type="string">
-        <value encoded="n">https://www.google.com</value>
+        <value encoded="n">http://10.149.95.226:8080</value>
     </attrib>
     <workflow-item name="item0" type="end" end-mode="0" comparator="0">
         <position y="51.87541513584446" x="302.64243775651124"/>
