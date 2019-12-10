@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="getVaultToken" result-type="SecureString" api-version="6.0.0" id="f9a4a35a-ad67-42c5-a069-6ecee4a90f51" version="0.0.1" category-name="com.moff.vault">
+  <param n="vaultUser" t="string"><![CDATA[Vault User]]></param>
+  <param n="vaultPassword" t="SecureString"><![CDATA[Vault Password]]></param>
+  <param n="vaultServer" t="string"><![CDATA[Vault Server]]></param>
+  <param n="vaultPort" t="string"><![CDATA[Vault Port]]></param>
+  <script encoded="false"><![CDATA[// Build the Vault URL
+url = "https://" + vaultServer + ":" + vaultPort;
+
+// Import the Vault SSL certificate
+var ld = Config.getKeystores().getImportCAFromUrlAction();
+var model = ld.getModel();
+    model.value = url;
+    error = ld.execute();
+
+//  Create REST call
+var uri = url + "/v1/auth/userpass/login/" + vaultUser;
+var method = "POST";
+    method = method.toUpperCase();
+
+//  Create a dynamic REST host
+var httpRestHost = null;
+var restHost = RESTHostManager.createHost("dynamicRequest");
+    restHost.operationTimeout = 900;
+    ttpRestHost = RESTHostManager.createTransientHostFrom(restHost);
+    httpRestHost.operationTimeout = 900;
+
+//  Remove the endpoint from the URI:
+var urlEndpointSplit = uri.split("/");
+var urlEndpoint = urlEndpointSplit[urlEndpointSplit.length - 1];
+    uri = uri.split(urlEndpoint)[0];
+    httpRestHost.url = uri;
+    httpRestHost.hostVerification = false;
+
+// Build the JSON body
+var requestBody = {
+    "password": vaultPassword
+}
+
+var request = httpRestHost.createRequest(method, urlEndpoint, JSON.stringify(requestBody));
+    request.contentType = "application/json";
+
+var response = request.execute();
+
+if (response.contentAsString){
+  var output = JSON.parse(response.contentAsString);
+  return output.auth.client_token
+}]]></script>
+</dunes-script-module>
