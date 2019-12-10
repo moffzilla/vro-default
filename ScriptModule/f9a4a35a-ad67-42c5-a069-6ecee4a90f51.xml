@@ -21,9 +21,9 @@ var method = "POST";
 //  Create a dynamic REST host
 var httpRestHost = null;
 var restHost = RESTHostManager.createHost("dynamicRequest");
-    restHost.operationTimeout = 900;
+    restHost.operationTimeout = 60;
     ttpRestHost = RESTHostManager.createTransientHostFrom(restHost);
-    httpRestHost.operationTimeout = 900;
+    httpRestHost.operationTimeout = 60;
 
 //  Remove the endpoint from the URI:
 var urlEndpointSplit = uri.split("/");
