@@ -39,7 +39,8 @@ var request = httpRestHost.createRequest(method, urlEndpoint);
 var response = request.execute();
 if (response.contentAsString){
   var output = JSON.parse(response.contentAsString);
-  return JSON.stringify(output.data.value);
+  System.log ("Moff:" + output.data)
+  return JSON.stringify(output.data);
 }
 
 return false
