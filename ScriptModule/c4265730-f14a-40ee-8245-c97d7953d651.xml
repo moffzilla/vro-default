@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<dunes-script-module name="getVaultSecretUserNameSshKey" result-type="string" api-version="6.0.0" id="c4265730-f14a-40ee-8245-c97d7953d651" version="0.0.4" category-name="local.moff.vault">
+<dunes-script-module name="getVaultSecretUserNameSshKey" result-type="string" api-version="6.0.0" id="c4265730-f14a-40ee-8245-c97d7953d651" version="0.0.5" category-name="local.moff.vault">
   <param n="userName" t="string"><![CDATA[]]></param>
   <script encoded="false"><![CDATA[if(userName == "" || userName == null) {
     return "Please select a user..."
@@ -8,7 +8,7 @@ var vaultUser = "vra"
 var vaultPassword = "VMware1!"
 var vaultServer = "sftp-100.moffzilla.io"
 var vaultPort = "8200"
-var vaultSecretPath = "vra/ssh"
+var vaultSecretPath = "vra/data/ssh"
 
 var vaultToken = System.getModule("local.moff.vault").getVaultToken(vaultUser,vaultPassword,vaultServer,vaultPort);
 var vaultData = System.getModule("local.moff.vault").getVaultSecretData(vaultServer,vaultPort,vaultSecretPath,vaultToken);
