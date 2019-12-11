@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<dunes-script-module name="getVaultSecretUserNameList" result-type="string" api-version="6.0.0" id="1a0edcb9-ff99-4811-85c1-be81e25de8e5" version="0.0.4" category-name="local.moff.vault">
+<dunes-script-module name="getVaultSecretUserNameList" result-type="string" api-version="6.0.0" id="1a0edcb9-ff99-4811-85c1-be81e25de8e5" version="0.0.5" category-name="local.moff.vault">
   <script encoded="false"><![CDATA[var vaultUser = "vra"
 var vaultPassword = "VMware1!"
 var vaultServer = "sftp-100.moffzilla.io"
 var vaultPort = "8200"
-var vaultSecretPath = "vra/ssh"
+var vaultSecretPath = "vra/data/ssh"
 
 var vaultToken = System.getModule("local.moff.vault").getVaultToken(vaultUser,vaultPassword,vaultServer,vaultPort);
 var vaultData = System.getModule("local.moff.vault").getVaultSecretData(vaultServer,vaultPort,vaultSecretPath,vaultToken);
