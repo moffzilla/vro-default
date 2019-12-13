@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<dunes-script-module name="getVaultSecretUserNameList" result-type="string" api-version="6.0.0" id="1a0edcb9-ff99-4811-85c1-be81e25de8e5" version="0.0.23" category-name="local.moff.vault">
+<dunes-script-module name="getVaultSecretUserNameList" result-type="string" api-version="6.0.0" id="1a0edcb9-ff99-4811-85c1-be81e25de8e5" version="0.0.24" category-name="local.moff.vault">
   <script encoded="false"><![CDATA[var vaultUser = "vra"
 var vaultPassword = "VMware1!"
 var vaultServer = "sftp-100.moffzilla.io"
@@ -13,14 +13,14 @@ System.log ("getmoffdata:" + vaultData);
 
 // Converting JSON object to JS object
 var obj = JSON.parse(vaultData);
-var userNames = "moff";
+// var userNames = "moff";
 
     // Define recursive function to print nested values
     function printValues(obj) {
         for(var k in obj) {
             if(obj[k] instanceof Object) {
                 // printValues(obj[k]);
-                //userNames = (obj[k]);
+                var userNames = (obj[k]);
             } 
         }
     };
