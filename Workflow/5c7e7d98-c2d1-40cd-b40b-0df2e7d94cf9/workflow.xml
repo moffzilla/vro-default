@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns2:workflow xmlns:ns2="http://vmware.com/vco/workflow" root-name="item1" object-name="workflow:name=generic" id="5c7e7d98-c2d1-40cd-b40b-0df2e7d94cf9" editor-version="2.0" version="0.2.1" api-version="6.0.0" restartMode="1" resumeFromFailedMode="0">
+<ns2:workflow xmlns:ns2="http://vmware.com/vco/workflow" root-name="item1" object-name="workflow:name=generic" id="5c7e7d98-c2d1-40cd-b40b-0df2e7d94cf9" editor-version="2.0" version="0.2.2" api-version="6.0.0" restartMode="1" resumeFromFailedMode="0">
     <display-name>First Workflow</display-name>
     <position y="45.8984375" x="103.0"/>
     <input/>
@@ -17,7 +17,7 @@
         <script encoded="false">//Auto-generated script
 var urlObject = new URL(url);
 result = urlObject.getContent() ;
-    System.log("Workflow was executed.");
+    System.log("Workflow was executed OneCloud.");
         </script>
         <in-binding>
             <bind name="url" type="string" export-name="url">
