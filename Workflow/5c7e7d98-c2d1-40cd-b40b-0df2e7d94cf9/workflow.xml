@@ -17,7 +17,7 @@
         <script encoded="false">//Auto-generated script
 var urlObject = new URL(url);
 result = urlObject.getContent() ;
-    System.log("Workflow was executed OneCloud.");
+    System.log("Workflow was executed Ubuntu.");
         </script>
         <in-binding>
             <bind name="url" type="string" export-name="url">
