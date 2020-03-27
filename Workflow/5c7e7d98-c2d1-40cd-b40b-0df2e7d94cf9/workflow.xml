@@ -7,7 +7,7 @@
         <param name="my_Result" type="string"/>
     </output>
     <attrib name="url" type="string">
-        <value encoded="n">http://10.149.95.226:8080</value>
+        <value encoded="n">http://sftp-100.moffzilla.io:8080</value>
     </attrib>
     <workflow-item name="item0" type="end" end-mode="0" comparator="0">
         <position y="51.87541513584446" x="302.64243775651124"/>
@@ -17,7 +17,7 @@
         <script encoded="false">//Auto-generated script
 var urlObject = new URL(url);
 result = urlObject.getContent() ;
-    System.log("Workflow was executed by Insanity.");
+    System.log("Workflow was executed by Moff.");
         </script>
         <in-binding>
             <bind name="url" type="string" export-name="url">
